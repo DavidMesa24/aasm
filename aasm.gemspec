@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.3'
 
   s.add_dependency 'concurrent-ruby', '~> 1.0'
+  s.add_dependency 'ruby-graphviz', '~> 1.2'
 
   s.add_development_dependency 'rake'
   s.add_development_dependency 'sdoc'
@@ -25,7 +26,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'appraisal'
   s.add_development_dependency "simplecov-cobertura"
   s.add_development_dependency "codecov", ">= 0.1.21"
-  s.add_development_dependency 'ruby-graphviz', '~> 1.2'
 
   # debugging
   # s.add_development_dependency 'debugger'
