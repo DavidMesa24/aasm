@@ -1,4 +1,5 @@
 require 'logger'
+require 'graphviz'
 
 module AASM
   class Base
@@ -195,6 +196,28 @@ module AASM
         events.map {|e| e.transitions_to_state(state)}.flatten.map(&:from).flatten
       end
     end
+
+    def visualize
+
+      g = GraphViz.new(:G, :type => :digraph)
+      g[:rankdir] = "LR"
+      g[:label] = @klass.to_s
+
+      states.each do |state|
+        g.add_node(state.name.to_s)
+      end
+
+      events.each do |event|
+        event.transitions.each do |transition|
+          g.add_edge(transition.from.to_s, transition.to.to_s, :label => event.name.to_s)
+        end
+      end
+
+      g.output(:png => "aasm.png")
+
+    end
+
+
 
     private
 
