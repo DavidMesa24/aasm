@@ -1,5 +1,5 @@
 require 'logger'
-require 'graphviz'
+require 'ruby-graphviz'
 
 module AASM
   class Base

@@ -5,4 +5,4 @@ gemspec
 gem 'sqlite3', '~> 1.4', :platforms => :ruby
 gem 'rails', '~> 6.1.4'
 gem 'after_commit_everywhere', '~> 1.0'
-gem 'graphviz', '~> 1.2'
+gem 'ruby-graphviz', '~> 1.2'
